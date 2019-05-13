@@ -1,0 +1,7 @@
+/target/
+.classpath 
+.project
+.settings/
+*.bak
+.idea/
+xxshowAdmin.iml
