@@ -101,6 +101,8 @@ public class Bip32UnitTest {
 			ECKeyPair parse1=null;
 			try {
 //				m(/\\d+'?){3}/[0,1]/\\d+'?
+				//coinomi wallet bip44格式为:m/44'/60'/0'/0
+				//imtoken metamsk  默认为m/44'/60'/0'/0/0 ,
 				parse1 = cpd.derive(BIP44.parsePath("m/44'/60'/0'/0/0"));
 //				parse1 = cpd.derive(address);
 			} catch ( Exception e) {

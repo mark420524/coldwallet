@@ -31,9 +31,14 @@ public class CoinPairDerive {
         ExtendedKey child = mExtendedKey
                 .getChild(Index.hard(purpose))
                 .getChild(Index.hard(coinType.coinType()))
-                .getChild(Index.hard(account))
-                .getChild(change)
-                .getChild(address);
+                .getChild(Index.hard(account));
+        if (addressIndex.getParent().isHasChange()) {
+        	child = child.getChild(change);
+            
+        }
+        if (addressIndex.getParent().isHasAddress()) {
+        	child = child.getChild(address);
+        }
         return child;
     }
 

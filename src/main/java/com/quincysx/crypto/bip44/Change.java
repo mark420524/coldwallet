@@ -8,14 +8,31 @@ public class Change {
     private final Account account;
     private final int change;
     private final String string;
-
+    private boolean hasChange;
+    private boolean hasAddress;
     Change(final Account account, final int change) {
         this.account = account;
         this.change = change;
         string = String.format("%s/%d", account, change);
     }
 
-    public int getValue() {
+    public boolean isHasChange() {
+		return hasChange;
+	}
+
+	public void setHasChange(boolean hasChange) {
+		this.hasChange = hasChange;
+	}
+
+	public boolean isHasAddress() {
+		return hasAddress;
+	}
+
+	public void setHasAddress(boolean hasAddress) {
+		this.hasAddress = hasAddress;
+	}
+
+	public int getValue() {
         return change;
     }
 
